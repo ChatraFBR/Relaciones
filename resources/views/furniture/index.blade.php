@@ -1,8 +1,8 @@
-@extends('product.base')
+@extends('base')
 
 @section('title', 'product list')
 
-@section('basecontent')
+@section('content')
 
     <table class="table table-striped table-hover" id="tablaProducto">
         <thead>
@@ -18,23 +18,23 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($products as $product)
+            @foreach($furnitures as $furniture)
                 <tr>
-                    <td>{{$product->id}}</td>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->price}}</td>
+                    <td>{{$furniture->id}}</td>
+                    <td>{{$furniture->name}}</td>
+                    <td>{{ number_format($furniture->price, 2) }}</td>
                     @if(session('user'))
-                        <td><a href="#" data-href="{{url('product/' . $product->id)}}" class = "borrar">delete</a></td>
-                        <td><a href="{{url('product/' . $product->id . '/edit')}}">edit</a></td>
+                        <td><a href="#" data-href="{{url('furniture/' . $furniture->id)}}" class = "borrar">delete</a></td>
+                        <td><a href="{{url('furniture/' . $furniture->id . '/edit')}}">edit</a></td>
                     @endif
-                    <td><a href="{{url('product/' . $product->id)}}">view</a></td>
+                    <td><a href="{{url('furniture/' . $furniture->id)}}">view</a></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
     <div class="row">
         @if(session('user'))
-            <a href="{{url('product/create')}}" class="btn btn-success">add product</a>
+            <a href="{{url('furniture/create')}}" class="btn btn-success">add furniture</a>
             <form id="formDelete" action="{{ url('') }}" method="post">
                 @csrf
                 @method('delete')

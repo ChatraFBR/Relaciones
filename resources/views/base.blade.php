@@ -19,6 +19,9 @@
                     <li class="nav-item {{$liproduct ?? ''}}">
                         <a class="nav-link" href="{{url('product')}}">product</a>
                     </li>
+                    <li class="nav-item {{$lifurniture ?? ''}}">
+                        <a class="nav-link" href="{{url('furniture')}}">furniture</a>
+                    </li>
                 </ul>
             </div>
         </nav>

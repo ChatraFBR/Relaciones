@@ -11,5 +11,6 @@
     @endif
     &nbsp;
     <a href="{{url('product')}}" class="btn btn-success">products</a>
-
+    &nbsp;
+    <a href="{{url('furniture')}}" class="btn btn-success">products</a>
 @endsection
